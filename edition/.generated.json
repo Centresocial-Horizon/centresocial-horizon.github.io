@@ -1,0 +1,438 @@
+{
+  "61": {
+    "routes": [
+      "/contenus/61/"
+    ],
+    "title": "Échanges de savoirs"
+  },
+  "132": {
+    "routes": [
+      "/contenus/132/"
+    ],
+    "title": "Art Floral (2 groupes)"
+  },
+  "162": {
+    "routes": [
+      "/contenus/162/"
+    ],
+    "title": "Le secteur jeunesse"
+  },
+  "175": {
+    "routes": [
+      "/contenus/175/"
+    ],
+    "title": "Programmes des vacances scolaires & infos séjours familles !"
+  },
+  "181": {
+    "routes": [
+      "/contenus/181/"
+    ],
+    "title": "Animation Globale"
+  },
+  "185": {
+    "routes": [
+      "/contenus/185/"
+    ],
+    "title": "Le Conseil d’Administration 2026/2027"
+  },
+  "189": {
+    "routes": [
+      "/contenus/189/"
+    ],
+    "title": "Les commissions"
+  },
+  "196": {
+    "routes": [
+      "/contenus/196/"
+    ],
+    "title": "Commission Famille/Jeunesse"
+  },
+  "198": {
+    "routes": [
+      "/contenus/198/"
+    ],
+    "title": "Commission échanges de savoirs"
+  },
+  "212": {
+    "routes": [
+      "/contenus/212/"
+    ],
+    "title": "Membres de droit"
+  },
+  "216": {
+    "routes": [
+      "/contenus/216/"
+    ],
+    "title": "Représentants des associations"
+  },
+  "236": {
+    "routes": [
+      "/contenus/236/"
+    ],
+    "title": "Le Centre Social"
+  },
+  "239": {
+    "routes": [
+      "/contenus/239/"
+    ],
+    "title": "Notre projet et nos valeurs"
+  },
+  "262": {
+    "routes": [
+      "/contenus/262/"
+    ],
+    "title": "Adhérer à Horizon"
+  },
+  "269": {
+    "routes": [
+      "/contenus/269/"
+    ],
+    "title": "Bibliothèque : Tire-Lire"
+  },
+  "284": {
+    "routes": [
+      "/contenus/284/"
+    ],
+    "title": "Randonnées (2 groupes)"
+  },
+  "324": {
+    "routes": [
+      "/clas-primaire/",
+      "/contenus/324/"
+    ],
+    "title": "CLAS primaire — accompagnement à la scolarité"
+  },
+  "336": {
+    "routes": [
+      "/jeunesse/",
+      "/contenus/336/"
+    ],
+    "title": "L’Espace Ados — horaires et informations"
+  },
+  "339": {
+    "routes": [
+      "/contenus/339/"
+    ],
+    "title": "Accompagnement à la scolarité collège"
+  },
+  "434": {
+    "routes": [
+      "/contenus/434/"
+    ],
+    "title": "Anglais 3 groupes : débutant et intermédiaire"
+  },
+  "441": {
+    "routes": [
+      "/contenus/441/"
+    ],
+    "title": "Cuisine (2 groupes)"
+  },
+  "445": {
+    "routes": [
+      "/contenus/445/"
+    ],
+    "title": "Informatique"
+  },
+  "447": {
+    "routes": [
+      "/contenus/447/"
+    ],
+    "title": "Danse en ligne & danse de salon"
+  },
+  "456": {
+    "routes": [
+      "/contenus/456/"
+    ],
+    "title": "Les associations adhérentes"
+  },
+  "950": {
+    "routes": [
+      "/contenus/950/"
+    ],
+    "title": "Gym d’entretien & chaise"
+  },
+  "998": {
+    "routes": [
+      "/contenus/998/"
+    ],
+    "title": "Commission jeunesse"
+  },
+  "1000": {
+    "routes": [
+      "/contenus/1000/"
+    ],
+    "title": "Commission « Bien vieillir »"
+  },
+  "1139": {
+    "routes": [
+      "/contenus/1139/"
+    ],
+    "title": "Rencontre d’auteur"
+  },
+  "1271": {
+    "routes": [
+      "/contenus/1271/"
+    ],
+    "title": "Ensemble en français"
+  },
+  "1298": {
+    "routes": [
+      "/contenus/1298/"
+    ],
+    "title": "Nos partenaires"
+  },
+  "1316": {
+    "routes": [
+      "/contenus/1316/"
+    ],
+    "title": "Partenaires Centres Sociaux"
+  },
+  "1463": {
+    "routes": [
+      "/contenus/1463/"
+    ],
+    "title": "La plaquette du centre"
+  },
+  "1955": {
+    "routes": [
+      "/contenus/1955/"
+    ],
+    "title": "Association « La ressource » : Repair Café"
+  },
+  "2201": {
+    "routes": [
+      "/contenus/2201/"
+    ],
+    "title": "Permanence sociale"
+  },
+  "2279": {
+    "routes": [
+      "/contenus/2279/"
+    ],
+    "title": "Statuts"
+  },
+  "2564": {
+    "routes": [
+      "/seniors/",
+      "/contenus/2564/"
+    ],
+    "title": "Adultes et seniors — toutes les activités"
+  },
+  "2636": {
+    "routes": [
+      "/contenus/2636/"
+    ],
+    "title": "Café Particip’Age + Mémoire"
+  },
+  "2646": {
+    "routes": [
+      "/contenus/2646/"
+    ],
+    "title": "Commission Numérique"
+  },
+  "2726": {
+    "routes": [
+      "/contenus/2726/"
+    ],
+    "title": "Allemand conversation"
+  },
+  "2852": {
+    "routes": [
+      "/contenus/2852/"
+    ],
+    "title": "Atelier Robotique"
+  },
+  "2874": {
+    "routes": [
+      "/contenus/2874/"
+    ],
+    "title": "Yoga et Sophrologie"
+  },
+  "2896": {
+    "routes": [
+      "/contenus/2896/"
+    ],
+    "title": "Le Réseau d’Entraide et de Solidarité"
+  },
+  "3060": {
+    "routes": [
+      "/contenus/3060/"
+    ],
+    "title": "Les Mercredis Animés"
+  },
+  "4108": {
+    "routes": [
+      "/famille/",
+      "/contenus/4108/"
+    ],
+    "title": "Famille"
+  },
+  "4116": {
+    "routes": [
+      "/contenus/4116/"
+    ],
+    "title": "Accueil"
+  },
+  "4366": {
+    "routes": [
+      "/contenus/4366/"
+    ],
+    "title": "Mamans en pause"
+  },
+  "4413": {
+    "routes": [
+      "/contenus/4413/"
+    ],
+    "title": "Les informations famille"
+  },
+  "4908": {
+    "routes": [
+      "/contenus/4908/"
+    ],
+    "title": "Livre coup de cœur du mois – Tire-Lire !"
+  },
+  "4916": {
+    "routes": [
+      "/contenus/4916/"
+    ],
+    "title": "Évasion Lecture"
+  },
+  "5244": {
+    "routes": [
+      "/contenus/5244/"
+    ],
+    "title": "Espace numérique"
+  },
+  "5968": {
+    "routes": [
+      "/contenus/5968/"
+    ],
+    "title": "Le thé des parents"
+  },
+  "6142": {
+    "routes": [
+      "/contenus/6142/"
+    ],
+    "title": "Fiche sanitaire jeunesse"
+  },
+  "6163": {
+    "routes": [
+      "/contenus/6163/"
+    ],
+    "title": "Frip’Horizon"
+  },
+  "6283": {
+    "routes": [
+      "/contenus/6283/"
+    ],
+    "title": "Couture"
+  },
+  "6340": {
+    "routes": [
+      "/contenus/6340/"
+    ],
+    "title": "Le journal Inf’Horizon"
+  },
+  "7218": {
+    "routes": [
+      "/contenus/7218/"
+    ],
+    "title": "Les joyeux retraités"
+  },
+  "7384": {
+    "routes": [
+      "/contenus/7384/"
+    ],
+    "title": "Associations adhérentes"
+  },
+  "7942": {
+    "routes": [
+      "/contenus/7942/"
+    ],
+    "title": "Sport fitness"
+  },
+  "7953": {
+    "routes": [
+      "/contenus/7953/"
+    ],
+    "title": "Ensemble Vocal"
+  },
+  "8043": {
+    "routes": [
+      "/contenus/8043/"
+    ],
+    "title": "DEFI TELETHON 2026"
+  },
+  "8047": {
+    "routes": [
+      "/contenus/8047/"
+    ],
+    "title": "NOUVELLE OUVERTURE FRIP’HORIZON"
+  },
+  "8050": {
+    "routes": [
+      "/contenus/8050/"
+    ],
+    "title": "ATELIER NUMERIQUE"
+  },
+  "8053": {
+    "routes": [
+      "/contenus/8053/"
+    ],
+    "title": "Espace Numérique : Nouveaux Horaires"
+  },
+  "8056": {
+    "routes": [
+      "/contenus/8056/"
+    ],
+    "title": "Des travaux au CS Horizon !"
+  },
+  "8060": {
+    "routes": [
+      "/contenus/8060/"
+    ],
+    "title": "LUNDI GONFLE"
+  },
+  "8064": {
+    "routes": [
+      "/contenus/8064/"
+    ],
+    "title": "SOIREE DISCO HALLOWEEN"
+  },
+  "8070": {
+    "routes": [
+      "/contenus/8070/"
+    ],
+    "title": "LES BASES DU SMARTPHONE"
+  },
+  "8073": {
+    "routes": [
+      "/contenus/8073/"
+    ],
+    "title": "1 CAFE 1 INFO"
+  },
+  "8077": {
+    "routes": [
+      "/contenus/8077/"
+    ],
+    "title": "Famille : vacances de la Toussaint 2026"
+  },
+  "8082": {
+    "routes": [
+      "/contenus/8082/"
+    ],
+    "title": "Jeunesse : Vacances Toussaint 2026"
+  },
+  "8088": {
+    "routes": [
+      "/contenus/8088/"
+    ],
+    "title": "Rencontre d’auteur à Tire-Lire"
+  },
+  "8092": {
+    "routes": [
+      "/contenus/8092/"
+    ],
+    "title": "Stand Couture pour le Téléthon"
+  }
+}

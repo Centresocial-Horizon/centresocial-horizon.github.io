@@ -1,0 +1,95 @@
+{
+  "source": "Photographies des tarifs communiquées par le centre",
+  "validite": null,
+  "horairesJournee": "9 h à 3 h du matin",
+  "reveillons": "Tarifs et horaires des réveillons : se renseigner auprès de l’accueil.",
+  "salles": [
+    {
+      "id": "bora-cuisine",
+      "salle": "Bora-Bora",
+      "formule": "Avec cuisine",
+      "capacite": 110,
+      "disponible": true,
+      "secteur": 220,
+      "horsSecteur": 260,
+      "cautionSecteur": 320,
+      "cautionHorsSecteur": 360
+    },
+    {
+      "id": "bora-seule",
+      "salle": "Bora-Bora",
+      "formule": "Sans cuisine",
+      "capacite": null,
+      "disponible": true,
+      "secteur": 170,
+      "horsSecteur": 210,
+      "cautionSecteur": 170,
+      "cautionHorsSecteur": 210
+    },
+    {
+      "id": "belle-cuisine",
+      "salle": "Belle-Île",
+      "formule": "Avec cuisine",
+      "capacite": 50,
+      "disponible": false,
+      "secteur": 180,
+      "horsSecteur": 220,
+      "cautionSecteur": 280,
+      "cautionHorsSecteur": 320
+    },
+    {
+      "id": "belle-seule",
+      "salle": "Belle-Île",
+      "formule": "Sans cuisine",
+      "capacite": null,
+      "disponible": false,
+      "secteur": 130,
+      "horsSecteur": 170,
+      "cautionSecteur": 130,
+      "cautionHorsSecteur": 170
+    }
+  ],
+  "preparation": {
+    "jour": "Vendredi",
+    "horaires": "20 h à 23 h",
+    "prixParSalle": 30
+  },
+  "vaisselle": [
+    {
+      "article": "Verres ordinaires",
+      "quantite": 50,
+      "prix": 5
+    },
+    {
+      "article": "Verres à pied",
+      "quantite": 50,
+      "prix": 10
+    },
+    {
+      "article": "Assiettes",
+      "quantite": 50,
+      "prix": 10
+    },
+    {
+      "article": "Couverts",
+      "quantite": 50,
+      "prix": 10
+    },
+    {
+      "article": "Tasses",
+      "quantite": 50,
+      "prix": 5
+    }
+  ],
+  "conditions": [
+    "Une attestation d’assurance responsabilité civile est demandée au nom de la personne qui signe le contrat.",
+    "Un contrat de location est établi avec l’accueil. L’identité du locataire est vérifiée.",
+    "Les tarifs secteur ou hors secteur et les disponibilités sont à confirmer avec l’accueil."
+  ],
+  "photos": {
+    "bora": "/assets/salle-bora-bora.jpg",
+    "boraAlt": "La salle Bora-Bora, avec ses tables et ses nouvelles chaises",
+    "belle": "/assets/salle-belle-ile.jpg",
+    "belleAlt": "La salle Belle-Île avant les travaux, avec ses tables et ses chaises"
+  }
+}

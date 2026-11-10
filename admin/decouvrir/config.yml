@@ -1,0 +1,224 @@
+backend:
+  name: test-repo
+locale: fr
+site_url: /
+logo:
+  src: /assets/horizon-logo.jpg
+media_folder: uploads
+public_folder: /uploads
+publish_mode: simple
+show_preview_links: false
+collections:
+- name: actualites
+  label: Actualités
+  label_singular: une actualité
+  folder: edition/actualites
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  summary: '{{title}} · {{date}}'
+  sortable_fields:
+  - date
+  - title
+  editor:
+    preview: false
+  fields:
+  - name: id
+    label: id
+    widget: hidden
+    required: false
+  - name: route
+    label: route
+    widget: hidden
+    required: false
+  - name: aliases
+    label: aliases
+    widget: hidden
+    required: false
+    default: []
+  - name: sectorLanding
+    label: sectorLanding
+    widget: hidden
+    required: false
+  - name: documentText
+    label: documentText
+    widget: hidden
+    required: false
+  - name: sectors
+    label: Secteurs concernés
+    widget: select
+    required: false
+    multiple: true
+    options:
+    - label: Jeunesse
+      value: jeunesse
+    - label: Famille
+      value: famille
+    - label: Adultes et seniors
+      value: seniors
+    - label: Numérique
+      value: numerique
+    - label: Lecture
+      value: lecture
+    - label: Scolarité et CLAS
+      value: scolarite
+    - label: Sport
+      value: sport
+    - label: Équipe du centre
+      value: equipe
+    hint: Choisissez les secteurs pour que les visiteurs retrouvent aussi ce contenu
+      dans la recherche.
+  - name: categories
+    label: categories
+    widget: hidden
+    required: false
+  - name: parent
+    label: parent
+    widget: hidden
+    required: false
+  - name: title
+    label: Titre
+    widget: string
+  - name: published
+    label: Afficher sur le site
+    widget: boolean
+    default: true
+    hint: Pour retirer ce contenu, désactivez ce bouton puis publiez.
+  - name: excerpt
+    label: Petite présentation
+    widget: text
+    required: false
+    hint: Deux ou trois phrases pour présenter le contenu.
+  - name: tags
+    label: Mots utiles pour la recherche
+    widget: list
+    required: false
+    hint: 'Exemples : seniors, jeunesse, couture. Séparez les mots par une virgule.'
+  - name: date
+    label: Date de publication
+    widget: datetime
+    required: true
+    date_format: DD/MM/YYYY
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: false
+  - name: image
+    label: Photo de l’actualité
+    widget: image
+    required: false
+    allow_multiple: false
+    media_library:
+      config:
+        max_file_size: 6000000
+    hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+  - name: home
+    label: Mettre en avant sur l’accueil
+    widget: boolean
+    default: true
+    hint: Les actualités de plus de deux mois disparaissent automatiquement.
+  - name: body
+    label: Texte de l’actualité
+    widget: markdown
+    required: true
+    modes:
+    - rich_text
+    buttons:
+    - bold
+    - italic
+    - link
+    - heading-two
+    - heading-three
+    - bulleted-list
+    - numbered-list
+    - quote
+    editor_components:
+    - image
+    sanitize_preview: true
+- name: programmes
+  label: Programmes à télécharger
+  label_singular: un programme
+  folder: edition/programmes
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  summary: '{{title}} · {{secteur}}'
+  sortable_fields:
+  - date
+  - title
+  editor:
+    preview: false
+  fields:
+  - name: title
+    label: Nom du programme
+    widget: string
+  - name: published
+    label: Afficher sur le site
+    widget: boolean
+    default: true
+  - name: secteur
+    label: Secteur concerné
+    widget: select
+    options:
+    - Jeunesse
+    - Famille
+    - Seniors
+    - Tout public
+    default: Jeunesse
+  - name: date
+    label: Date de publication
+    widget: datetime
+    required: true
+    date_format: DD/MM/YYYY
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: false
+  - name: fin
+    label: Date de fin du programme
+    widget: datetime
+    required: false
+    date_format: DD/MM/YYYY
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: false
+  - name: pdf
+    label: Document PDF
+    widget: file
+    allow_multiple: false
+    pattern:
+    - \.[pP][dD][fF]$
+    - Choisissez un document au format PDF.
+    media_library:
+      config:
+        max_file_size: 20000000
+    hint: Déposez le PDF depuis votre ordinateur. 20 Mo maximum.
+  - name: image
+    label: Photo ou couverture du programme
+    widget: image
+    required: false
+    allow_multiple: false
+    media_library:
+      config:
+        max_file_size: 6000000
+    hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+  - name: description
+    label: Quelques mots de présentation
+    widget: markdown
+    required: false
+    modes:
+    - rich_text
+    buttons:
+    - bold
+    - italic
+    - link
+    - heading-two
+    - heading-three
+    - bulleted-list
+    - numbered-list
+    - quote
+    editor_components:
+    - image
+    sanitize_preview: true

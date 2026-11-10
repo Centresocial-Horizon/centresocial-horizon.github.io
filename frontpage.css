@@ -1,0 +1,185 @@
+/* News is the front door: keep the first three stories visible and readable. */
+html { scroll-padding-top: 100px; }
+.topbar .container { height: 30px; min-height: 30px; font-size: 13px; }
+.header-inner { height: 84px; gap: 20px; }
+.header .brand-logo { width: 170px; height: auto; max-height: 76px; }
+.header nav { gap: 19px; }
+.header nav > a:not(.button) { font-size: 13px; }
+.header nav .button { font-size: 13px; padding: 11px 15px; }
+
+#actualites { padding-top: 22px; padding-bottom: 24px; }
+#actualites .section-heading { align-items: center; gap: 18px; margin-bottom: 18px; }
+#actualites .eyebrow { font-size: 13px; letter-spacing: .08em; }
+#actualites h2 { font-size: 34px; line-height: 1.2; margin-top: 5px; letter-spacing: -1px; }
+#actualites .section-heading > .text-link { font-size: 14px; }
+#actualites .news-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+#actualites .news-card { min-width: 0; box-shadow: 0 3px 12px #006f9e08; }
+#actualites .news-image { height: 120px; }
+#actualites .news-content { padding: 13px 17px 15px; }
+#actualites .news-content > time,
+#actualites .news-date { display: block; font-size: 13px; line-height: 1.4; }
+#actualites .news-content h3 { font-size: 18px; line-height: 1.35; letter-spacing: -.25px; margin: 5px 0 7px; }
+#actualites .news-content p { font-size: 15px; line-height: 1.45; margin: 0 0 8px; }
+#actualites .news-content .text-link { min-height: 26px; font-size: 13px; line-height: 1.4; }
+#actualites .tag { left: 12px; bottom: 10px; padding: 4px 8px; font-size: 13px; letter-spacing: 0; }
+#actualites .digital-bubble { top: 16px; left: 18px; font-size: 15px; line-height: 1.35; }
+#actualites .digital-phone { top: 12px; right: 33px; width: 52px; height: 96px; border-width: 3px; border-radius: 10px; box-shadow: 4px 4px 0 #006f9e20; }
+#actualites .digital-phone > span { width: 19px; height: 4px; }
+#actualites .digital-phone i { font-size: 29px; margin-top: 17px; }
+#actualites .digital-phone small { font-size: 8px; margin-top: 2px; }
+#actualites .digital-phone b { font-size: 12px; }
+#actualites .digital-star { top: 0; right: 5px; font-size: 41px; }
+#actualites .book-art > span { top: 15px; left: 18px; font-size: 15px; line-height: 1.4; }
+#actualites .book { right: 40px; width: 43px; height: 70px; border-left-width: 7px; }
+#actualites .book::after { width: 19px; height: 23px; left: 6px; top: 12px; }
+#actualites .book-two { right: 77px; bottom: -24px; }
+#actualites .book-three { right: 10px; bottom: -39px; }
+#actualites .book-art i { top: 4px; right: 15px; font-size: 34px; }
+
+/* Facebook is contacted only after the visitor chooses to load the feed. */
+.social-live { margin-top: 24px; padding: 21px 24px; border: 1px solid #badde9; border-radius: 9px; background: #edf8fc; }
+.social-live h3 { font-size: 20px; line-height: 1.4; letter-spacing: -.35px; margin: 0 0 8px; }
+.social-live p { color: #3d6073; font-size: 15px; line-height: 1.6; margin: 0 0 12px; }
+.social-consent { max-width: 870px; }
+.facebook-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+.facebook-controls .button { white-space: normal; font-size: 14px; padding: 11px 17px; }
+.facebook-controls .text-link { font-size: 14px; min-height: 32px; }
+.social-live-frame { width: 100%; margin-top: 18px; }
+.social-live-frame[hidden],
+.social-live [hidden] { display: none !important; }
+.social-live-frame iframe { display: block; width: 100%; max-width: 100%; height: 420px; border: 1px solid #badde9; border-radius: 6px; background: #fff; }
+.social-live .facebook-status { font-size: 13px; margin: 12px 0 0; }
+
+/* Room hire has its own chapter and a direct route to the complete rates. */
+.room-home { padding-top: 60px; padding-bottom: 60px; }
+.room-home .section-heading { align-items: center; margin-bottom: 24px; }
+.room-home .eyebrow { font-size: 13px; }
+.room-home .section-heading > p { font-size: 15px; max-width: 380px; }
+.room-home-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.room-home-card { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; border: 1px solid #b9dce9; border-top: 5px solid #00769f; border-radius: 9px; padding: 26px; background: #edf8fc; }
+.room-home-card h3 { font-size: 26px; line-height: 1.3; letter-spacing: -.55px; margin: 15px 0 8px; }
+.room-home-card > p { font-size: 15px; line-height: 1.65; margin: 0 0 16px; color: #3d6073; }
+.room-home-status { display: inline-block; padding: 6px 10px; border-radius: 4px; background: #d0eef5; color: #075a7b; font-size: 13px; line-height: 1.5; font-weight: 700; }
+.room-home-card.room-unavailable,
+.room-home-card[data-unavailable="true"] { border-top-color: #ca6a37; background: #fff6ee; }
+.room-home-card.room-unavailable .room-home-status,
+.room-home-card[data-unavailable="true"] .room-home-status { color: #7b3b20; background: #f9e3d4; }
+.room-home-prices { width: 100%; margin: 0 0 20px; padding: 13px 0; border-top: 1px solid #c7e2ed; border-bottom: 1px solid #c7e2ed; color: #153f5b; font-size: 15px; line-height: 1.65; }
+.room-home-prices p { margin: 0; }
+.room-home-prices strong { font-size: 18px; font-weight: 800; }
+.room-home-prices small { display: block; font-size: 13px; line-height: 1.6; color: #4a6879; margin-top: 3px; }
+.room-home-card > .text-link,
+.room-home-card > .button { margin-top: auto; font-size: 14px; }
+.room-home > .rental-alert { margin-bottom: 0; }
+
+/* Real room photographs, with the pre-works status visible beside Belle-Île. */
+.room-home-photo { width: 100%; margin: 0 0 18px; }
+.room-home-photo > a,
+.migrated-content .room-gallery-photo { display: block; overflow: hidden; border-radius: 6px; aspect-ratio: 16 / 10; background: #dcebf0; }
+.room-home-photo img,
+.migrated-content .room-gallery-photo img { display: block; width: 100%; height: 100%; max-width: 100%; margin: 0; border-radius: 0; object-fit: cover; }
+.room-home-photo figcaption { margin-top: 7px; font-size: 13px; line-height: 1.5; color: #783b20; }
+.room-home-photo a:focus-visible,
+.room-gallery-photo:focus-visible { outline: 3px solid #df7a00; outline-offset: 4px; }
+.room-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 24px 0 32px; }
+.migrated-content .room-gallery figure { min-width: 0; margin: 0; }
+.migrated-content .room-gallery figcaption { margin: 11px 0 0; font-size: 14px; line-height: 1.6; }
+.room-gallery figcaption strong { display: block; color: #075d81; font-size: 18px; }
+@media (max-width: 700px) {
+  .room-gallery { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Keep rate labels legible; horizontal scrolling belongs to the table only. */
+.tariff-scroll { max-width: 100%; margin: 24px 0 15px; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid #bddde9; border-radius: 7px; background: #fff; }
+.tariff-scroll:focus-visible { outline: 3px solid #df7a00; outline-offset: 4px; }
+.tariff-scroll > table.tariff-table { display: table; width: 100%; min-width: 650px; margin: 0; border-collapse: collapse; overflow: visible; font-size: 15px; line-height: 1.55; }
+.tariff-table caption { padding: 14px 16px; text-align: left; color: #153f5b; font-size: 15px; font-weight: 700; }
+.tariff-table th,
+.tariff-table td { border: 1px solid #c6e1ec; padding: 13px 15px; text-align: left; vertical-align: top; }
+.tariff-table thead th { background: #006f9e; color: #fff; font-weight: 700; }
+.tariff-table tbody th { background: #e7f5fa; color: #075b7e; font-weight: 700; min-width: 175px; }
+.tariff-table tbody tr:nth-child(even) td { background: #f4fafc; }
+.tariff-table th small,
+.tariff-table td small { display: block; color: inherit; font-size: 13px; font-weight: 400; line-height: 1.6; margin-top: 3px; }
+.tariff-table .unavailable-rate th,
+.tariff-table .unavailable-rate td { background: #fff6ee; }
+.tariff-note { color: #4a6879; font-size: 14px; line-height: 1.7; margin: 12px 0 22px; }
+.rental-alert { margin: 24px 0; padding: 17px 20px; border: 1px solid #edc5a9; border-left: 4px solid #ca6a37; border-radius: 6px; background: #fff5ec; color: #783b20; font-size: 15px; line-height: 1.65; }
+.rental-alert p { margin: 0 0 8px; }
+.rental-alert p:last-child { margin-bottom: 0; }
+.tariff-scroll > table.dish-table { min-width: 420px; }
+
+@media (min-width: 1201px) {
+  .header nav { gap: 16px; }
+}
+
+@media (max-width: 950px) and (min-width: 701px) {
+  #actualites .news-grid { gap: 14px; }
+  #actualites .news-content { padding: 12px; }
+  #actualites .news-content h3 { font-size: 17px; }
+  #actualites .digital-bubble,
+  #actualites .book-art > span { font-size: 13px; left: 12px; }
+  #actualites .digital-phone { right: 18px; width: 46px; }
+}
+
+@media (max-width: 700px) {
+  html { scroll-padding-top: 92px; }
+  .topbar .container { height: 30px; min-height: 30px; font-size: 13px; }
+  .topbar .container > span { max-width: 53%; line-height: 1.1; }
+  .header-inner { height: 80px; }
+  .header .brand-logo { width: 163px; max-height: 73px; }
+  .header .menu-toggle { width: 44px; height: 44px; }
+  #actualites { padding-top: 18px; padding-bottom: 24px; }
+  #actualites .section-heading { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 4px 16px; margin-bottom: 14px; }
+  #actualites .eyebrow { font-size: 13px; line-height: 1.35; }
+  #actualites h2 { font-size: 30px; line-height: 1.2; margin-top: 4px; }
+  #actualites .section-heading > .text-link { font-size: 13px; min-height: 24px; margin-top: 0; }
+  #actualites .news-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  #actualites .news-card { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 12px; align-items: start; padding: 11px; }
+  #actualites .news-image { height: 96px; width: 90px; border-radius: 5px; }
+  #actualites .news-image > img { height: 100%; }
+  #actualites .news-content { min-width: 0; padding: 0; }
+  #actualites .news-content > time,
+  #actualites .news-date { font-size: 13px; line-height: 1.35; }
+  #actualites .news-content h3 { font-size: 16px; line-height: 1.3; margin: 3px 0 4px; letter-spacing: -.15px; }
+  #actualites .news-content p { font-size: 15px; line-height: 1.35; margin: 0 0 3px; }
+  #actualites .news-content .text-link { min-height: 24px; font-size: 13px; line-height: 1.4; gap: 8px; }
+  #actualites .tag { left: 0; right: 0; bottom: 0; padding: 4px 2px; border-radius: 0; background: #fff; font-size: 13px; font-weight: 700; line-height: 1.4; text-align: center; }
+  #actualites .digital-art,
+  #actualites .book-art { display: none; }
+  #actualites .news-digital::before { content: ""; position: absolute; left: 29px; top: 10px; width: 30px; height: 45px; border: 2px solid #00638d; border-radius: 7px; background: #fff; transform: rotate(9deg); }
+  #actualites .news-digital::after { content: ""; position: absolute; left: 40px; top: 47px; width: 6px; height: 3px; border-radius: 4px; background: #00638d; transform: rotate(9deg); }
+  #actualites .news-library::before { content: ""; position: absolute; left: 25px; top: 12px; width: 36px; height: 43px; border: 2px solid #00638d; border-left-width: 7px; border-radius: 2px 6px 6px 2px; background: #00aeb3; transform: rotate(-9deg); }
+  #actualites .news-library::after { content: ""; position: absolute; left: 38px; top: 23px; width: 17px; height: 20px; border: 1px solid #fff; transform: rotate(-9deg); }
+  .social-live { margin-top: 18px; padding: 18px; }
+  .social-live h3 { font-size: 19px; }
+  .social-live p { font-size: 15px; }
+  .facebook-controls { align-items: flex-start; gap: 10px; }
+  .facebook-controls .button { width: 100%; }
+  .social-live-frame { margin-top: 14px; }
+  .room-home { padding-top: 44px; padding-bottom: 44px; }
+  .room-home .section-heading { display: block; }
+  .room-home .section-heading > .text-link { display: inline-flex; margin-top: 15px; }
+  .room-home .section-heading > p { margin-top: 15px; }
+  .room-home-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .room-home-card { padding: 22px; }
+  .room-home-card h3 { font-size: 25px; }
+  .tariff-scroll { margin-top: 20px; }
+  .tariff-scroll > table.tariff-table { font-size: 15px; }
+  .tariff-table th,
+  .tariff-table td { padding: 11px 13px; }
+  .rental-alert { padding: 15px 17px; }
+}
+
+@media (max-width: 390px) {
+  .topbar .container > span { max-width: 49%; }
+  #actualites .news-card { grid-template-columns: 82px minmax(0, 1fr); gap: 10px; padding: 10px; }
+  #actualites .news-image { width: 82px; }
+  #actualites .tag { font-size: 13px; letter-spacing: -.3px; }
+  #actualites .news-digital::before { left: 25px; }
+  #actualites .news-digital::after { left: 36px; }
+  #actualites .news-library::before { left: 21px; }
+  #actualites .news-library::after { left: 34px; }
+}
+
+.room-home-prices>strong{display:block;font-size:25px}.room-home-prices>strong>small{display:inline;font-size:14px;margin-left:5px}.room-home-prices>span{display:block;font-size:13px;line-height:1.65;margin-top:4px}.social-live-frame iframe{max-width:500px;margin:0 auto}.social-consent>#facebook-privacy-note{font-size:13px}

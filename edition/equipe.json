@@ -1,0 +1,60 @@
+{
+  "intro": "Une équipe pour vous accueillir, accompagner vos projets et faire vivre les activités du centre.",
+  "members": [
+    {
+      "name": "Lucie BOURASSEAU",
+      "role": "Direction",
+      "photo": ""
+    },
+    {
+      "name": "Samira IHATTAREN",
+      "role": "Accueil et secrétariat",
+      "photo": ""
+    },
+    {
+      "name": "Delphine VIGNERON",
+      "role": "Accueil et secrétariat",
+      "photo": ""
+    },
+    {
+      "name": "Nathalie LOISEAU",
+      "role": "Comptabilité",
+      "photo": ""
+    },
+    {
+      "name": "Flavien GUILLOTE",
+      "role": "Responsable jeunesse",
+      "photo": ""
+    },
+    {
+      "name": "Nathan BARREAU",
+      "role": "Animateur jeunesse",
+      "photo": ""
+    },
+    {
+      "name": "Yelena CHEVET",
+      "role": "Animatrice jeunesse en alternance",
+      "photo": ""
+    },
+    {
+      "name": "Hélène MIRANDA",
+      "role": "Référente famille",
+      "photo": ""
+    },
+    {
+      "name": "Marion GUINAUDEAU",
+      "role": "Animatrice seniors",
+      "photo": ""
+    },
+    {
+      "name": "Alice DA COSTA CADETE",
+      "role": "Agent d’entretien",
+      "photo": ""
+    },
+    {
+      "name": "Liam FOUCART",
+      "role": "Service civique numérique",
+      "photo": ""
+    }
+  ]
+}

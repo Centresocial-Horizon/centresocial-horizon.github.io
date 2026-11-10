@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#006f9e">
+  <title>Gérer le site — Horizon</title>
+  <link rel="icon" href="/assets/horizon-logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <script src="/admin/accueil.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#gestion">Aller à la gestion du site</a>
+  <header class="admin-header wrap">
+    <a href="/" class="brand"><img src="/assets/horizon-logo.jpg" alt="Horizon — Centre social et socioculturel" width="220" height="99"></a>
+    <a class="quiet-link" href="/">Voir le site <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="gestion" class="wrap">
+    <section class="welcome">
+      <p class="eyebrow">L’ESPACE DE L’ÉQUIPE</p>
+      <h1>Votre site,<br><span>à portée de main.</span></h1>
+      <p class="intro">Une information à changer, une photo à ajouter, un programme à partager ? Retrouvez ici les rubriques à modifier, sans ouvrir de code.</p>
+      <p class="connection-status" id="connection-status" role="status">Vérification de la configuration de l’éditeur…</p>
+      <div class="actions">
+        <a class="button" id="open-editor" href="/admin/editeur.html" hidden>Ouvrir l’éditeur <span aria-hidden="true">→</span></a>
+        <a class="quiet-link" href="#premiers-pas">Comment ça marche ? <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="setup-panel" id="setup-panel" aria-labelledby="setup-title">
+      <span class="step-label">PREMIÈRE CONNEXION</span>
+      <h2 id="setup-title">Il reste à relier votre compte.</h2>
+      <p>Les formulaires sont préparés. L’autorisation du compte du centre doit encore être terminée pour enregistrer les changements et les publier sur Internet.</p>
+      <ol class="setup-list">
+        <li><strong>Votre compte GitHub</strong><span>Le compte prévu est <b>Centresocial-Horizon</b>. Il gardera les fichiers du site.</span></li>
+        <li><strong>Votre compte éditeur</strong><span>La connexion gratuite Decap Turbo doit être autorisée pour le site du centre.</span></li>
+        <li><strong>Votre première publication</strong><span>Une fois le raccordement terminé, le bouton « Ouvrir l’éditeur » apparaîtra ici.</span></li>
+      </ol>
+      <p class="small-note">L’offre retenue est <strong>Free : un site et un compte éditeur, à 0 €</strong>. L’essai Pro et les options payantes ne sont pas nécessaires.</p>
+      <div class="actions"><a class="button button-outline" href="https://turbo.decapcms.org/" target="_blank" rel="noopener noreferrer">Ouvrir le service de connexion <span aria-hidden="true">↗</span></a><a class="quiet-link" href="/admin/decouvrir/">Essayer les formulaires sans publier →</a></div>
+    </section>
+
+    <section class="sections" aria-labelledby="sections-title">
+      <div class="section-heading"><p class="eyebrow">LES RUBRIQUES À MODIFIER</p><h2 id="sections-title">De quoi avez-vous besoin ?</h2></div>
+      <div class="section-grid">
+        <article><span class="card-number">01</span><h3>Les actualités</h3><p>Ajouter une nouvelle, écrire quelques lignes et choisir une photo pour l’accueil.</p></article>
+        <article><span class="card-number">02</span><h3>Les programmes</h3><p>Déposer un PDF et indiquer le secteur et les dates auxquels il correspond.</p></article>
+        <article><span class="card-number">03</span><h3>Les salles et tarifs</h3><p>Changer une photo, un montant, une caution ou la disponibilité d’une salle.</p></article>
+        <article><span class="card-number">04</span><h3>L’équipe</h3><p>Ajouter une personne, corriger son poste ou changer sa photo.</p></article>
+        <article><span class="card-number">05</span><h3>Les horaires et contacts</h3><p>Mettre à jour l’accueil, l’Espace Ados, le téléphone et les coordonnées.</p></article>
+        <article><span class="card-number">06</span><h3>Les pages du centre</h3><p>Modifier les activités, la présentation, les informations pratiques et les réseaux.</p></article>
+      </div>
+    </section>
+
+    <section id="premiers-pas" class="first-steps" aria-labelledby="steps-title">
+      <div class="section-heading"><p class="eyebrow">APRÈS LA CONNEXION INITIALE</p><h2 id="steps-title">Trois gestes, et c’est fait.</h2></div>
+      <ol class="howto">
+        <li><span>1</span><div><h3>Choisir la rubrique</h3><p>Ouvrez l’éditeur, connectez-vous, puis cliquez sur « Actualités », « Équipe » ou la rubrique souhaitée.</p></div></li>
+        <li><span>2</span><div><h3>Modifier les champs</h3><p>Écrivez comme dans un document. Pour une photo ou un PDF, choisissez le fichier sur votre ordinateur.</p></div></li>
+        <li><span>3</span><div><h3>Cliquer sur « Publier »</h3><p>Le site se reconstruit automatiquement. Patientez quelques minutes, puis ouvrez le site pour vérifier votre changement.</p></div></li>
+      </ol>
+      <p class="first-steps-note">Une actualité ou un programme devenu ancien disparaît automatiquement selon la règle des deux mois. Les pages permanentes restent disponibles.</p>
+    </section>
+  </main>
+  <footer class="admin-footer wrap"><p>Horizon · Espace de gestion du site</p><a href="/">Retour à l’accueil →</a></footer>
+</body>
+</html>

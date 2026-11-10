@@ -1,0 +1,31 @@
+{
+  "phone": "02 41 65 13 88",
+  "email": "accueil@centresocial-horizon.fr",
+  "address": "4 allée des Aigles\n49300 Cholet",
+  "openingHours": [
+    {
+      "label": "Lundi",
+      "hours": "14 h – 18 h"
+    },
+    {
+      "label": "Mardi",
+      "hours": "9 h – 12 h 30 / 14 h – 18 h"
+    },
+    {
+      "label": "Mercredi",
+      "hours": "9 h – 12 h 30 / 14 h – 17 h"
+    },
+    {
+      "label": "Jeudi",
+      "hours": "9 h – 12 h 30 / 14 h – 18 h"
+    },
+    {
+      "label": "Vendredi",
+      "hours": "9 h – 12 h 30 / 14 h – 17 h"
+    }
+  ],
+  "youth": {
+    "outside": "Mercredi : 14 h – 18 h ; Vendredi : 17 h – 21 h 30 ; Samedi : 14 h – 18 h",
+    "holidays": "Les jours et les horaires varient selon le programme. Les activités ont généralement lieu le mercredi et le jeudi après-midi. Contactez l’équipe pour connaître les créneaux et les inscriptions."
+  }
+}

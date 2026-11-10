@@ -1,0 +1,9 @@
+.team-card .team-portrait { width: 72px; height: 72px; object-fit: cover; border-radius: 50%; margin: 0 0 17px; }
+.cms-news-placeholder { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: #d6f0f7; color: #006184; font-size: 25px; font-weight: 800; }
+.cms-opening-hours { margin: 20px 0 30px; }
+.cms-opening-hours > div { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 10px 0; border-bottom: 1px solid #c9e3ed; }
+.cms-opening-hours dt { font-weight: 700; }
+.cms-opening-hours dd { margin: 0; }
+.cms-programmes .topic-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.cms-programmes .topic-links a { padding: 14px 18px; border: 1px solid #b9dce9; border-radius: 7px; background: #edf8fc; color: #075d81; font-weight: 700; }
+@media (max-width: 550px) { .cms-opening-hours > div { grid-template-columns: 90px 1fr; gap: 12px; } .cms-programmes .topic-links a { width: 100%; } }

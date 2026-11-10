@@ -1,0 +1,640 @@
+# Connexion à renseigner après autorisation du compte du centre.
+# Aucun mot de passe ou jeton ne doit être ajouté dans ce fichier public.
+backend:
+  name: turbo-github
+  turbo_site_id: null
+  branch: main
+locale: fr
+site_url: https://centresocial-horizon.github.io
+display_url: https://centresocial-horizon.github.io
+logo:
+  src: /assets/horizon-logo.jpg
+  show_in_header: true
+media_folder: uploads
+public_folder: /uploads
+media_library:
+  config:
+    max_file_size: 20000000
+publish_mode: simple
+show_preview_links: false
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
+collections:
+- name: actualites
+  label: Actualités
+  label_singular: une actualité
+  folder: edition/actualites
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  summary: '{{title}} · {{date}}'
+  sortable_fields:
+  - date
+  - title
+  editor:
+    preview: false
+  fields:
+  - &id001
+    name: id
+    label: id
+    widget: hidden
+    required: false
+  - &id002
+    name: route
+    label: route
+    widget: hidden
+    required: false
+  - &id003
+    name: aliases
+    label: aliases
+    widget: hidden
+    required: false
+    default: []
+  - name: sectorLanding
+    label: sectorLanding
+    widget: hidden
+    required: false
+  - name: documentText
+    label: documentText
+    widget: hidden
+    required: false
+  - name: sectors
+    label: Secteurs concernés
+    widget: select
+    required: false
+    multiple: true
+    options:
+    - label: Jeunesse
+      value: jeunesse
+    - label: Famille
+      value: famille
+    - label: Adultes et seniors
+      value: seniors
+    - label: Numérique
+      value: numerique
+    - label: Lecture
+      value: lecture
+    - label: Scolarité et CLAS
+      value: scolarite
+    - label: Sport
+      value: sport
+    - label: Équipe du centre
+      value: equipe
+    hint: Choisissez les secteurs pour que les visiteurs retrouvent aussi ce contenu
+      dans la recherche.
+  - name: categories
+    label: categories
+    widget: hidden
+    required: false
+  - name: parent
+    label: parent
+    widget: hidden
+    required: false
+  - &id004
+    name: title
+    label: Titre
+    widget: string
+  - &id005
+    name: published
+    label: Afficher sur le site
+    widget: boolean
+    default: true
+    hint: Pour retirer ce contenu, désactivez ce bouton puis publiez.
+  - &id006
+    name: excerpt
+    label: Petite présentation
+    widget: text
+    required: false
+    hint: Deux ou trois phrases pour présenter le contenu.
+  - &id007
+    name: tags
+    label: Mots utiles pour la recherche
+    widget: list
+    required: false
+    hint: 'Exemples : seniors, jeunesse, couture. Séparez les mots par une virgule.'
+  - name: date
+    label: Date de publication
+    widget: datetime
+    required: true
+    date_format: DD/MM/YYYY
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: false
+  - name: image
+    label: Photo de l’actualité
+    widget: image
+    required: false
+    allow_multiple: false
+    media_library:
+      config:
+        max_file_size: 6000000
+    hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+  - name: home
+    label: Mettre en avant sur l’accueil
+    widget: boolean
+    default: true
+    hint: Les actualités de plus de deux mois disparaissent automatiquement.
+  - name: body
+    label: Texte de l’actualité
+    widget: markdown
+    required: true
+    modes:
+    - rich_text
+    buttons:
+    - bold
+    - italic
+    - link
+    - heading-two
+    - heading-three
+    - bulleted-list
+    - numbered-list
+    - quote
+    editor_components:
+    - image
+    sanitize_preview: true
+- name: programmes
+  label: Programmes à télécharger
+  label_singular: un programme
+  folder: edition/programmes
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  summary: '{{title}} · {{secteur}}'
+  sortable_fields:
+  - date
+  - title
+  editor:
+    preview: false
+  fields:
+  - name: title
+    label: Nom du programme
+    widget: string
+  - name: published
+    label: Afficher sur le site
+    widget: boolean
+    default: true
+  - name: secteur
+    label: Secteur concerné
+    widget: select
+    options:
+    - Jeunesse
+    - Famille
+    - Seniors
+    - Tout public
+    default: Jeunesse
+  - name: date
+    label: Date de publication
+    widget: datetime
+    required: true
+    date_format: DD/MM/YYYY
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: false
+  - name: fin
+    label: Date de fin du programme
+    widget: datetime
+    required: false
+    date_format: DD/MM/YYYY
+    time_format: false
+    format: YYYY-MM-DD
+    picker_utc: false
+  - name: pdf
+    label: Document PDF
+    widget: file
+    allow_multiple: false
+    pattern:
+    - \.[pP][dD][fF]$
+    - Choisissez un document au format PDF.
+    media_library:
+      config:
+        max_file_size: 20000000
+    hint: Déposez le PDF depuis votre ordinateur. 20 Mo maximum.
+  - name: image
+    label: Photo ou couverture du programme
+    widget: image
+    required: false
+    allow_multiple: false
+    media_library:
+      config:
+        max_file_size: 6000000
+    hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+  - name: description
+    label: Quelques mots de présentation
+    widget: markdown
+    required: false
+    modes:
+    - rich_text
+    buttons:
+    - bold
+    - italic
+    - link
+    - heading-two
+    - heading-three
+    - bulleted-list
+    - numbered-list
+    - quote
+    editor_components:
+    - image
+    sanitize_preview: true
+- name: pages
+  label: Rubriques et activités
+  label_singular: une rubrique
+  folder: edition/pages
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{slug}}'
+  summary: '{{title}}'
+  sortable_fields:
+  - title
+  editor:
+    preview: false
+  fields:
+  - *id001
+  - *id002
+  - *id003
+  - name: image
+    label: image
+    widget: hidden
+    required: false
+  - name: home
+    label: home
+    widget: hidden
+    required: false
+  - name: date
+    label: date
+    widget: hidden
+    required: false
+  - name: sectorLanding
+    label: sectorLanding
+    widget: hidden
+    required: false
+  - name: documentText
+    label: documentText
+    widget: hidden
+    required: false
+  - name: sectors
+    label: Secteurs concernés
+    widget: select
+    required: false
+    multiple: true
+    options:
+    - label: Jeunesse
+      value: jeunesse
+    - label: Famille
+      value: famille
+    - label: Adultes et seniors
+      value: seniors
+    - label: Numérique
+      value: numerique
+    - label: Lecture
+      value: lecture
+    - label: Scolarité et CLAS
+      value: scolarite
+    - label: Sport
+      value: sport
+    - label: Équipe du centre
+      value: equipe
+    hint: Choisissez les secteurs pour que les visiteurs retrouvent aussi ce contenu
+      dans la recherche.
+  - name: categories
+    label: categories
+    widget: hidden
+    required: false
+  - name: parent
+    label: parent
+    widget: hidden
+    required: false
+  - *id004
+  - *id005
+  - *id006
+  - *id007
+  - name: body
+    label: Texte de la page
+    widget: markdown
+    required: true
+    modes:
+    - rich_text
+    buttons:
+    - bold
+    - italic
+    - link
+    - heading-two
+    - heading-three
+    - bulleted-list
+    - numbered-list
+    - quote
+    editor_components:
+    - image
+    sanitize_preview: true
+- name: accueil
+  label: Page d’accueil
+  editor:
+    preview: false
+  files:
+  - name: accueil
+    label: Page d’accueil
+    file: edition/accueil.json
+    fields:
+    - name: heroLine1
+      label: Grande phrase — première ligne
+      widget: string
+    - name: heroLine2
+      label: Grande phrase — deuxième ligne
+      widget: string
+    - name: heroIntro
+      label: Texte de bienvenue
+      widget: text
+    - name: heroPhoto
+      label: Photo du centre
+      widget: image
+      required: true
+      allow_multiple: false
+      media_library:
+        config:
+          max_file_size: 6000000
+      hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+    - name: heroPhotoAlt
+      label: Description de la photo
+      widget: string
+      hint: Une courte phrase pour les personnes qui ne voient pas la photo.
+    - name: newsTitle
+      label: Titre du bloc des actualités
+      widget: string
+  format: json
+- name: equipe
+  label: L’équipe
+  editor:
+    preview: false
+  files:
+  - name: equipe
+    label: L’équipe
+    file: edition/equipe.json
+    fields:
+    - name: intro
+      label: Texte de présentation
+      widget: text
+    - name: members
+      label: Les membres de l’équipe
+      widget: list
+      label_singular: une personne
+      collapsed: true
+      summary: '{{fields.name}} — {{fields.role}}'
+      fields:
+      - name: name
+        label: Prénom et nom
+        widget: string
+      - name: role
+        label: Poste ou mission
+        widget: string
+      - name: photo
+        label: Photo de la personne
+        widget: image
+        required: false
+        allow_multiple: false
+        media_library:
+          config:
+            max_file_size: 6000000
+        hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+  format: json
+- name: salles
+  label: Salles, photos et tarifs
+  editor:
+    preview: false
+  files:
+  - name: salles
+    label: Salles, photos et tarifs
+    file: edition/salles.json
+    fields:
+    - name: source
+      label: source
+      widget: hidden
+      required: false
+    - name: validite
+      label: Date de validité des tarifs
+      widget: datetime
+      required: false
+      date_format: DD/MM/YYYY
+      time_format: false
+      format: YYYY-MM-DD
+      picker_utc: false
+    - name: horairesJournee
+      label: Horaires de location à la journée
+      widget: string
+    - name: reveillons
+      label: Informations pour les réveillons
+      widget: text
+    - name: photos
+      label: Photos des salles
+      widget: object
+      fields:
+      - name: bora
+        label: Photo de Bora-Bora
+        widget: image
+        required: true
+        allow_multiple: false
+        media_library:
+          config:
+            max_file_size: 6000000
+        hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+      - name: boraAlt
+        label: Description de la photo de Bora-Bora
+        widget: string
+      - name: belle
+        label: Photo de Belle-Île
+        widget: image
+        required: true
+        allow_multiple: false
+        media_library:
+          config:
+            max_file_size: 6000000
+        hint: Choisissez une photo sur votre ordinateur. 6 Mo maximum.
+      - name: belleAlt
+        label: Description de la photo de Belle-Île
+        widget: string
+        hint: Conservez la mention avant travaux si la photo est ancienne.
+    - name: salles
+      label: Les formules de location
+      widget: list
+      allow_add: false
+      allow_remove: false
+      allow_reorder: false
+      min: 4
+      max: 4
+      collapsed: true
+      summary: '{{fields.salle}} — {{fields.formule}}'
+      fields:
+      - name: id
+        label: id
+        widget: hidden
+        required: false
+      - name: salle
+        label: Salle
+        widget: select
+        options:
+        - Bora-Bora
+        - Belle-Île
+      - name: formule
+        label: Formule
+        widget: select
+        options:
+        - Avec cuisine
+        - Sans cuisine
+      - name: capacite
+        label: Nombre maximum de personnes
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+      - name: disponible
+        label: Cette formule est ouverte à la location
+        widget: boolean
+        hint: Belle-Île doit rester fermée tant que les travaux ne sont pas terminés.
+      - name: secteur
+        label: Location — secteur (€)
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+      - name: horsSecteur
+        label: Location — hors secteur (€)
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+      - name: cautionSecteur
+        label: Caution — secteur (€)
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+      - name: cautionHorsSecteur
+        label: Caution — hors secteur (€)
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+    - name: preparation
+      label: Préparation de la salle
+      widget: object
+      fields:
+      - name: jour
+        label: Jour
+        widget: string
+      - name: horaires
+        label: Horaires
+        widget: string
+      - name: prixParSalle
+        label: Prix par salle (€)
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+    - name: vaisselle
+      label: Location de vaisselle
+      widget: list
+      collapsed: true
+      summary: '{{fields.article}} — {{fields.prix}} €'
+      label_singular: un article
+      fields:
+      - name: article
+        label: Article
+        widget: string
+      - name: quantite
+        label: Nombre de pièces dans le lot
+        widget: number
+        value_type: int
+        min: 1
+      - name: prix
+        label: Prix du lot (€)
+        widget: number
+        value_type: float
+        min: 0
+        step: 0.01
+    - name: conditions
+      label: Démarches et conditions
+      widget: list
+      field:
+        name: condition
+        label: Condition
+        widget: text
+      hint: Une condition par ligne. Vous pouvez réorganiser la liste.
+  format: json
+- name: horaires
+  label: Horaires et contact
+  editor:
+    preview: false
+  files:
+  - name: horaires
+    label: Horaires et contact
+    file: edition/horaires.json
+    fields:
+    - name: phone
+      label: Numéro de téléphone
+      widget: string
+    - name: email
+      label: Adresse e-mail
+      widget: string
+      pattern:
+      - ^[^\s@]+@[^\s@]+\.[^\s@]+$
+      - Indiquez une adresse e-mail valide.
+    - name: address
+      label: Adresse du centre
+      widget: text
+    - name: openingHours
+      label: Horaires de l’accueil
+      widget: list
+      collapsed: false
+      label_singular: une ligne d’horaires
+      summary: '{{fields.label}} — {{fields.hours}}'
+      fields:
+      - name: label
+        label: Jour ou période
+        widget: string
+      - name: hours
+        label: Horaires
+        widget: string
+    - name: youth
+      label: Horaires de l’Espace Ados
+      widget: object
+      fields:
+      - name: outside
+        label: Hors vacances scolaires
+        widget: text
+      - name: holidays
+        label: Pendant les vacances scolaires
+        widget: text
+  format: json
+- name: reseaux
+  label: Réseaux sociaux
+  editor:
+    preview: false
+  files:
+  - name: reseaux
+    label: Réseaux sociaux
+    file: edition/reseaux.json
+    fields:
+    - name: links
+      label: Les comptes du centre
+      widget: list
+      collapsed: true
+      summary: '{{fields.label}}'
+      label_singular: un réseau social
+      fields:
+      - name: label
+        label: Nom affiché
+        widget: string
+      - name: url
+        label: Lien du compte
+        widget: string
+        pattern:
+        - ^https://
+        - Le lien doit commencer par https://.
+  format: json
