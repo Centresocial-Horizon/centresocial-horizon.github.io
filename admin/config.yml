@@ -1,8 +1,8 @@
-# Connexion à renseigner après autorisation du compte du centre.
+# Connexion du site Horizon autorisée par le compte du centre.
 # Aucun mot de passe ou jeton ne doit être ajouté dans ce fichier public.
 backend:
   name: turbo-github
-  turbo_site_id: null
+  turbo_site_id: 725e3e36-9d96-411e-9e95-7cd16820129f
   branch: main
 locale: fr
 site_url: https://centresocial-horizon.github.io

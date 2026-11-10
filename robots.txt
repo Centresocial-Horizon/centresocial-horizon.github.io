@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /edition/
+
+Sitemap: https://centresocial-horizon.github.io/sitemap.xml

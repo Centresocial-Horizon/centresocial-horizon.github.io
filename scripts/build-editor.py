@@ -14,6 +14,7 @@ from urllib.parse import urlsplit, quote, unquote
 from zoneinfo import ZoneInfo
 from datetime import datetime
 from lxml import html, etree
+import importlib.util
 try:
     from markdown_it import MarkdownIt
 except ImportError:
@@ -395,6 +396,9 @@ class Builder:
         self.output[Path('tout-horizon/index.html')]=None
     def build(self):
         self.record_pages();self.contact();self.team();self.rentals();self.programmes();self.homepage();self.globals();self.index()
+        seo_spec=importlib.util.spec_from_file_location('horizon_editor_seo',Path(__file__).with_name('editor_seo.py'))
+        seo_module=importlib.util.module_from_spec(seo_spec);seo_spec.loader.exec_module(seo_module)
+        seo_module.apply_seo(self)
         self.output[Path('edition/.generated.json')]=dump(self.manifest)
         # Finish all validation and serialization before writing any changed output.
         for path,tree in self.documents.items():self.output[path]='<!doctype html>'+etree.tostring(tree,encoding='unicode',method='html')
