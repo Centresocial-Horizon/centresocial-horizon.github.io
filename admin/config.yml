@@ -48,6 +48,7 @@ collections:
     label: route
     widget: hidden
     required: false
+    default: ''
   - &id003
     name: aliases
     label: aliases
@@ -58,10 +59,12 @@ collections:
     label: sectorLanding
     widget: hidden
     required: false
+    default: false
   - name: documentText
     label: documentText
     widget: hidden
     required: false
+    default: ''
   - name: sectors
     label: Secteurs concernés
     widget: select
@@ -86,14 +89,17 @@ collections:
       value: equipe
     hint: Choisissez les secteurs pour que les visiteurs retrouvent aussi ce contenu
       dans la recherche.
+    default: []
   - name: categories
     label: categories
     widget: hidden
     required: false
+    default: []
   - name: parent
     label: parent
     widget: hidden
     required: false
+    default: 0
   - &id004
     name: title
     label: Titre
@@ -116,6 +122,7 @@ collections:
     widget: list
     required: false
     hint: 'Exemples : seniors, jeunesse, couture. Séparez les mots par une virgule.'
+    default: []
   - name: date
     label: Date de publication
     widget: datetime
@@ -264,22 +271,27 @@ collections:
     label: image
     widget: hidden
     required: false
+    default: ''
   - name: home
     label: home
     widget: hidden
     required: false
+    default: false
   - name: date
     label: date
     widget: hidden
     required: false
+    default: ''
   - name: sectorLanding
     label: sectorLanding
     widget: hidden
     required: false
+    default: false
   - name: documentText
     label: documentText
     widget: hidden
     required: false
+    default: ''
   - name: sectors
     label: Secteurs concernés
     widget: select
@@ -304,14 +316,17 @@ collections:
       value: equipe
     hint: Choisissez les secteurs pour que les visiteurs retrouvent aussi ce contenu
       dans la recherche.
+    default: []
   - name: categories
     label: categories
     widget: hidden
     required: false
+    default: []
   - name: parent
     label: parent
     widget: hidden
     required: false
+    default: 0
   - *id004
   - *id005
   - *id006

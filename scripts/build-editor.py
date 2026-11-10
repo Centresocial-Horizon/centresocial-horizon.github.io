@@ -75,6 +75,22 @@ def markdown(value):return safe_html(MD.render(str(value or '')))
 def euro(value):
     if isinstance(value,bool) or not isinstance(value,(int,float)) or not math.isfinite(value) or value<0:raise ValueError('Un tarif doit être un nombre positif ou nul')
     return f'{value:g}'.replace('.',',')+' €'
+def optional_list(value,field):
+    # Decap serializes untouched optional hidden fields as null or an empty string.
+    if value is None or value=='':return []
+    if not isinstance(value,list):raise ValueError(field+' : une liste est attendue')
+    return value
+def editor_metadata(record,today,kind):
+    record=dict(record)
+    for field in ['aliases','categories','sectors','tags']:
+        record[field]=optional_list(record.get(field),field)
+    if record.get('parent') in (None,''):record['parent']=0
+    if record.get('documentText') in (None,''):record['documentText']=''
+    elif not isinstance(record['documentText'],str):raise ValueError('documentText : du texte est attendu')
+    if record.get('sectorLanding') in (None,''):record['sectorLanding']=False
+    if kind=='page' and not record.get('date'):record['date']=today.isoformat()
+    day(record.get('date'),'date de publication')
+    return record
 def set_html(node,fragment):
     for c in list(node):node.remove(c)
     node.text=''
@@ -127,7 +143,7 @@ class Builder:
         old=self.items.get(str(key),{})
         item={**old,**{k:v for k,v in (source or {}).items() if k in ['date','parent','categories','sectors','sectorLanding','tags','expiresOn']},
               'id':key,'title':str(title),'url':where,'kind':kind,'excerpt':str((source or {}).get('excerpt') or text(content)[:280]),'searchText':text(content),'retired':not published}
-        item.setdefault('date',self.today.isoformat());item.setdefault('categories',[]);item.setdefault('tags',[]);item.setdefault('sectors',[]);item.setdefault('parent',0)
+        item=editor_metadata(item,self.today,kind)
         self.items[str(key)]=item
     def active(self,r,kind):
         if r.get('published',True) is False:return False
@@ -137,7 +153,7 @@ class Builder:
         occupied={p for primary,aliases in SPECIAL.values() for p in [primary]+aliases}
         for folder,kind,prefix in [('pages','page','rubriques'),('actualites','post','actualites')]:
             for file in sorted((self.edition/folder).glob('*.json')):
-                r=json.loads(file.read_text());stem=file.stem
+                r=editor_metadata(json.loads(file.read_text()),self.today,kind);stem=file.stem
                 if not str(r.get('title','')).strip():raise ValueError(file.name+' : titre obligatoire')
                 canonical=route(r.get('route') or '/'+prefix+'/'+stem+'/')
                 aliases=[route(a) for a in r.get('aliases',[]) if a!=canonical]
@@ -207,6 +223,10 @@ class Builder:
         dishes=''.join('<tr><th scope="row">'+esc(v['article'])+'</th><td>'+esc(v['quantite'])+'</td><td>'+euro(v['prix'])+'</td></tr>' for v in r['vaisselle'])
         prep=r['preparation'];conditions=''.join('<li>'+esc(c)+'</li>' for c in r['conditions'])
         content='<p>Une réunion, une fête de famille ou un événement associatif ? Retrouvez ici les formules, les tarifs et les démarches pour louer une salle à Horizon.</p>'+alerts+gallery+'<section id="tarifs"><h2>Les tarifs de location</h2><p>Journée de <strong>'+esc(r['horairesJournee'])+'</strong>. Le prix de la location et la caution sont indiqués séparément.</p>'+tables+'<p class="tariff-note">Pour connaître le tarif secteur qui vous concerne et les conditions de la caution, contactez l’accueil. '+esc(r.get('reveillons',''))+'</p></section><section id="preparation"><h2>Préparer votre événement</h2><p><strong>'+euro(prep['prixParSalle'])+' par salle</strong>, '+esc(prep['jour'])+' de <strong>'+esc(prep['horaires'])+'</strong>, pour la préparation. Cette possibilité concerne uniquement les salles ouvertes à la location.</p></section><section id="vaisselle"><h2>La location de vaisselle</h2><table class="dish-table"><caption>Prix par lot de 50 pièces</caption><thead><tr><th scope="col">Vaisselle</th><th scope="col">Quantité</th><th scope="col">Tarif</th></tr></thead><tbody>'+dishes+'</tbody></table></section><section id="reserver"><h2>Comment réserver ?</h2><ol>'+conditions+'</ol><p><a class="button" href="tel:'+esc(self.phone_href)+'">Appeler l’accueil — '+esc(self.hours['phone'])+'</a></p><p><a href="mailto:'+esc(self.hours['email'])+'">Écrire à l’accueil</a> · <a href="/#contact">Horaires et accès</a></p></section>'
+        if r.get('validite'):
+            validity=day(r['validite'],'Date de validité des tarifs').strftime('%d/%m/%Y')
+            content='<p class="tariff-note">Tarifs en vigueur à compter du '+validity+'.</p>'+content
+        content=content.replace('Prix par lot de 50 pièces','Prix par lot de vaisselle')
         for p in ['/salles/','/contenus/264/']:self.page(p,'Location de salles et tarifs',content)
         self.register(264,'Location de salles et tarifs','/salles/',content,source={'sectors':['salles'],'tags':['location','tarif','prix','caution','Bora-Bora','Belle-Île','cuisine','vaisselle','réservation']})
         for node in self.doc('index.html').xpath('//*[@id="location-salles"]//div[@class="room-home-grid"]'):set_html(node,homecards)
@@ -309,6 +329,7 @@ class Builder:
     def globals(self):
         social=self.read('reseaux.json');links=social.get('links',[])
         for entry in links:url(entry['url'])
+        facebook=next((x['url'] for x in links if urlsplit(x['url']).hostname in {'facebook.com','www.facebook.com','m.facebook.com'}),None)
         # Update every generated and retained page, so phone/email/footer do not diverge.
         paths=set(self.root.rglob('*.html'))
         paths={p.relative_to(self.root) for p in paths if not {'admin','edition'}.intersection(p.relative_to(self.root).parts)}|set(self.documents)
@@ -341,6 +362,15 @@ class Builder:
                 set_html(footer,''.join('<a href="'+esc(x['url'])+'" target="_blank" rel="noopener noreferrer">'+esc(x['label'])+' ↗</a>' for x in links))
             for block in tree.xpath('//*[@id="reseaux"]//div[@class="social-links"]'):
                 set_html(block,''.join('<a href="'+esc(x['url'])+'" target="_blank" rel="noopener noreferrer"><strong>'+esc(x['label'])+' ↗</strong></a>' for x in links))
+            for panel in tree.xpath('//*[@id="social-live"]'):
+                if facebook:
+                    panel.attrib.pop('hidden',None);panel.set('data-facebook-page',facebook)
+                    for anchor in panel.xpath('.//a[contains(@href,"facebook.com")]'):anchor.set('href',facebook)
+                else:panel.set('hidden','')
+            for footer in tree.xpath('//footer//div[contains(concat(" ",normalize-space(@class)," ")," footer-bottom ")]/div'):
+                if not footer.xpath('./a[@data-management]'):
+                    link=etree.SubElement(footer,'a',href='https://centresocial-horizon.github.io/admin/')
+                    link.set('data-management','true');link.text='Gérer le site'
             self.output[path]=None
     def index(self):
         # Re-extract final HTML, including structured team, hours, tariffs and programme links.

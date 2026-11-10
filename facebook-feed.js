@@ -2,7 +2,7 @@
 (()=>{
  const load=document.querySelector('#facebook-load');const frame=document.querySelector('#facebook-feed');const hide=document.querySelector('#facebook-hide');const controls=document.querySelector('#facebook-hide-controls');
  if(!load||!frame||!hide||!controls)return;
- const page='https://www.facebook.com/p/Centre-Social-et-Socioculturel-Horizon-100067073132159/';
+ const page=document.querySelector('#social-live')?.dataset?.facebookPage||'https://www.facebook.com/p/Centre-Social-et-Socioculturel-Horizon-100067073132159/';
  function closeFeed(){frame.replaceChildren();frame.hidden=true;controls.hidden=true;load.hidden=false;load.setAttribute('aria-expanded','false');load.focus()}
  load.addEventListener('click',()=>{
   if(frame.querySelector('iframe'))return;
